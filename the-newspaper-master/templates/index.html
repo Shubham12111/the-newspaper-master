@@ -1,0 +1,83 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>The daily prophet</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Playfair+Display+SC:wght@900&family=Playfair+Display:ital,wght@0,800;1,800&family=Manrope:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="main__wrapper">
+  <main>
+    <h1>The Daily Prophet</h1>
+    <aside> 
+      <div>
+        <div class="issue">Issue #{{ issue}} </div>
+        <div class="date">{{ date }}</div>
+        <div class="edition">The Shakir Edition</div>
+      </div>
+    </aside>
+    <h2 class="title--large main-title">{{ title }}</h2>
+    <div class="main-text multi-column">
+      <p>{{ content.1 }}</p>
+      <p>{{ content.2 }} {{ content.4 }} {{ content.5 }}</p>
+      <p>{{ content.6 }}</p>
+    </div><a class="terrarium" href="https://shakirsadiq6.github.io/" target="_blank">
+      <figure><img src="{{ image }}"/>
+        <figcaption>{{ title }}</figcaption>
+      </figure></a><a class="item-with-image plan span--2 long--2"><img src="{{ hp_news.first_hp_news_image }}"/>
+      <h4>{{ hp_news.first_hp_news_title }}</h4>
+      <div class="multi-column">
+        <p>{{ hp_news.first_hp_news_content.1 }} {{ hp_news.first_hp_news_content.2 }} {{ hp_news.first_hp_news_content.3 }} {{ hp_news.first_hp_news_content.4 }}</p>
+      </div></a><a class="hogwarts">
+      <div class="hogwarts__title">50% Off Hogwarts Express tickets</div>
+      <div class="hogwarts__image"> <span>Limited time offer</span><img src="{% static 'images/hogwarts.svg' %}"/></div></a><a class="item-with-image pasta with-border">
+      <h4>A pasta menu</h4>
+      <p>Everybody loves pasta. It's impossible to not love them, so here are 15 recipes, served with GSAP. Note the easter egg — the menu icon changes according to the pasta that you choose.</p></a><a class="item-with-image magazine with-border">
+      <h4>Marvel at a magazine</h4>
+      <p>A tribute of sorts to an era of cool superhero movies, this is a Marvel-themed magazine! Recommended, because it took 45 hours, so you know some serious dedication has been poured into this.</p></a><a class="item-with-image style">
+      <h4>{{ mcu_news.first_mcu_news_title }}</h4>
+      <p>{{ mcu_news.first_mcu_news_content.1 }} {{ mcu_news.first_mcu_news_content.2 }}</p></a><a class="item-with-image toggles"><img src="{{ mcu_news.second_hp_news_image }}"/>
+      <h4>{{ mcu_news.second_hp_news_title }}</h4>
+      <p>{{ mcu_news.second_hp_news_content.1 }}</p></a><a class="menu">
+      <figure><img src="{{ mcu_news.first_mcu_news_image }}"/>
+        <figcaption>See the new and improved menu for Toasty!</figcaption>
+      </figure></a><a class="social"><img class="social__image" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/showcase-social.gif"/>
+      <div class="social__subtitle">World News</div>
+      <div class="social__content">Looks like Covid-19 is gonna be around for a while so here is another friendly reminder to practice social distancing. Oh, and wear a mask! </div></a>
+    <div class="item-with-image cssgrid-collection"><a class="cssgrid-collection__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/showcase-co-grid.jpg"/></a>
+      <div class="cssgrid-collection__content">
+        <h4> <a>More CSS Grid things like this one. Shelves, coupons and more!  </a></h4>
+        <div class="multi-column-3">
+          <p>Get your fill of more CSS Grid items in this collection. There are a total of 32 pens to date... well, 33, if you count this one too. What can you expect in this collection? The hidden gems, in my totally  unbiased opinion, are <a>the recreation of the Pac-Man layout</a> and  <a>coupons inspired by junk mail</a>. A lot of joke items of things that shouldn't be done in CSS Grid, such as <a>a shelf</a>?   <a>Bathroom tiles wtf</a>? and  <a>makeup palettes </a>. If you are a cultured person, you will have a chance to enjoy a couple of pens inspired by <a>Harry Potter  </a>and  <a>Pokemon.</a> On the rare occasion that you are looking at this profile for something you can use in production, you really shouldn't. But, there are <em> some   </em>real-world applications, such as <a>the recipe layout</a>,   <a>the product catalog</a>, and  <a>color palettes for a style guide</a>.</p>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <h3 class="title--big">Hot this month</h3><a class="codepen-item pie"><img class="pie__image" src="{% static 'images/shakir.jpg' %}"/>
+        <div class="pie__subtitle">Developer </div>
+        <div class="pie__content">
+          <h4>Shakir Sadiq</h4>
+          <p style="text-align: justify;">Meet Shakir Sadiq, a Python maestro who knows no bounds. Having 3+ years of python experience, Shakir uses every chance to immerse in the world of code.</p>
+        </div></a><a class="sidebar-item captcha">
+        <h5>Frustrated designer runs amok with Captcha ideas</h5>
+        <p>From Tic Tac Toe to solving meme-based questions, this is a different take on how web captchas should be. "I have not successfully picked out all photos of a truck on the first try. Something's gotta change," says the designer, who has requested to remain anonymous.</p></a><a class="sidebar-item slack-ui with-border">
+        <h5>Slack UI gets reverse engineered</h5>
+        <p>Another valiant effort to reverse engineer a web app. However, the UI is repurposed to showcase Codepens instead of mock conversations. This is a codepen showcase inception situation.</p></a><a class="workout">
+        <div class="workout__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/showcase-workout.jpg" alt="Workout"/></div>
+        <div class="workout__blurb">Always failing to keep track of your workouts? </div>
+        <div class="workout__title">Use this tool!</div></a>
+    </div>
+  </main>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
